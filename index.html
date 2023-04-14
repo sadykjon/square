@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .red{
+            color: red;
+
+        }
+        .color{
+            color: green;
+        } */
+
+        .block{
+        width: 600px;
+        height: 600px;
+        position: relative;
+        border: 3px solid red;
+    }
+    .box{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border: 1px solid #333;
+        transition: 3s;
+    }
+    .box1 {
+        background-color: red;
+        animation: box 6s 3s infinite;
+    }
+    .box2 {
+        background-color: green;
+        animation: box 6s infinite;
+    }
+    @keyframes box {
+        0%, 100% {
+            top: 0;
+            left: 0;
+        }
+        25%{
+            left: 0;
+            top: 500px;
+        }
+        50%{
+            top: 500px;
+            left: 500px;
+        }
+        75%{
+            left: 500px;
+            top: 0;
+        }
+    }
+       .h1{
+        opacity: 1;
+       }
+       
+    </style>
+</head>
+
+<body>
+    
+    <button>Click</button>
+    <h1 class="h1">Click go to start</h1>
+    <div class="block">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+    </div>
+    <script>
+        
+        // btn.onclick=()=>{
+        //     text.classList.toggle("color")
+        //     text.classList.toggle("red")
+
+        // }
+        
+        
+        // let box=false
+        // btn.onclick=()=>{
+        //     box=!box
+        //     if(box){
+        //         text.classList.remove("color")
+        //         text.classList.add("red")
+        //     }else{
+        //         text.classList.remove("red")
+        //         text.classList.add("color")
+        //     }
+        // }
+        let btn=document.querySelector("button")
+            let box1=document.querySelector(".box1")
+            let box2=document.querySelector(".box2")
+            let h1=document.querySelector(".h1")
+            btn.onclick=()=>{
+                box1.classList.toggle("box1")
+                box2.classList.toggle("box2")
+            }
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        box-sizing: border-box;
+        }
+        .container{
+            width: 1200px;
+            height: 100vh;
+            margin: 0 auto;
+        }
+        .block{
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        align-items: center;
+        }
+        .box{
+            margin: 100px 0;
+
+        }
+        .btn{
+            padding: 15px 25px;
+        }
+        .link{
+            position: fixed;
+            z-index: -1;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+    </style>
+</head>
+<body>
+        <div class="link"></div>
+        <div class="container">
+            <div class="block">
+                <div>
+                    <h2>Go To Start</h2>
+                </div>
+                <div class="box">
+                    <img class="img_dice1" src="./images/dice1.png" alt="" srcset="">
+                    <img class="img_dice2" src="./images/dice2.png" alt="" srcset="">
+                </div>
+                <button class="btn">Send</button>
+            </div>
+        </div>
+
+<script>
+    let btn=document.querySelector(".btn")
+
+    btn.onclick=()=>{
+        let number1=Math.ceil(Math.random()*6)
+        let number2=Math.ceil(Math.random()*6)
+        let img1=`./images/dice${number1}.png`
+        let img2=`./images/dice${number2}.png`
+        let dice1=document.querySelector(".img_dice1")
+        let dice2=document.querySelector(".img_dice2")
+        let h2=document.querySelector("h2")
+        
+        dice1.src=img1
+        dice2.src=img2
+        dice1Value=number1
+        dice2Value=number2
+
+        if (dice1Value >dice2Value) {
+          h2.innerText = "1ый игрок победил";
+        } else if (dice1Value < dice2Value) {
+          h2.innerText = "2ой игрок победил";
+        } else {
+          h2.innerText = "Ничья";
+        }
+      
+    }
+</script>
+
+
+</body>
+</html>
